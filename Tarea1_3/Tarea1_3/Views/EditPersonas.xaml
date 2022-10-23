@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea1_3.Views.EditPersonas"
+             BackgroundImageSource="backgrudn.jpg">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Actualizar Persona" FontSize="Large"
+                   TextColor="WhiteSmoke"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="CenterAndExpand" />
+
+            <Entry x:Name="txtid2" Placeholder="ID de persona" Text="{Binding id}" IsVisible="False"></Entry>
+
+            <Label Text="NOMBRES" TextColor="WhiteSmoke" Margin="10"></Label>
+            <Entry x:Name="txtname2" Placeholder="Ingrese sus nombres" Text="{Binding name}" TextColor="Black" Margin="10"></Entry>
+
+            <Label Text="APELLIDO" TextColor="WhiteSmoke" Margin="10"></Label>
+            <Entry x:Name="txtsname2" Placeholder="Ingrese sus apellidos" Text="{Binding sname}" TextColor="Black" Margin="10"></Entry>
+
+            <Label Text="EDAD" TextColor="WhiteSmoke" Margin="10"></Label>
+            <Entry x:Name="txtedad2" Placeholder="Ingrese su edad" Keyboard="Numeric" Text="{Binding edad}" TextColor="Black" Margin="10"></Entry>
+
+            <Label Text="DIRECCION" TextColor="WhiteSmoke" Margin="10"></Label>
+            <Entry x:Name="txtdir2" Placeholder="Ingrese su direccion" Text="{Binding dir}" TextColor="Black" Margin="10"></Entry>
+
+            <Label Text="CORREO" TextColor="WhiteSmoke" Margin="10"></Label>
+            <Entry x:Name="txtemail2" Placeholder="Ingrese su correo" Keyboard="Email" Text="{Binding email}" TextColor="Black" Margin="10"></Entry>
+
+            <Button x:Name="btnedit" Text="EDITAR" Clicked="btnedit_Clicked"></Button>
+            <Button x:Name="btnatras" Text="VOLVER" Clicked="btnatras_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

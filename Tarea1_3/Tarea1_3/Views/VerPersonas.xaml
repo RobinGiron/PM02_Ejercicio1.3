@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             x:Class="Tarea1_3.Views.VerPersonas">
+    <ContentPage.Content>
+        
+            <StackLayout>
+                <Label Text="🤵🏻PERSONAS" FontSize="Large" HorizontalOptions="Center" Padding="10" FontAttributes="Bold"></Label>
+            <syncfusion:SfListView x:Name="listaPersonas" HorizontalOptions="FillAndExpand" 
+                      VerticalOptions="FillAndExpand" AllowSwiping="True"  SwipeStarted="ListView_SwipeStarted" SelectionChanged="listaPersonas_SelectionChanged"
+                   Swiping="ListView_Swiping"
+                   SwipeEnded="ListView_SwipeEnded" IsStickyHeader="True" SwipeOffset="120" SwipeThreshold="30"
+                   ItemSize="100" HeaderSize="50" >
+                
+                <syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Clicked="OnMore"
+                                  CommandParameter="{Binding .}"
+                                  Text="More" />
+                                    <MenuItem Clicked="OnDelete"
+                                  CommandParameter="{Binding .}"
+                                  Text="Delete" IsDestructive="True" />
+                                </ViewCell.ContextActions>
+                                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding id}" x:Name="lblid" Grid.Row="0" Grid.Column="0" TextColor="DarkRed" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding name}" Grid.Row="0" Grid.Column="1" TextColor="Gray"/>
+                                    <Label Text="{Binding sname}" Grid.Row="0" Grid.Column="2" TextColor="Gray"/>
+                                    <Label Text="{Binding edad}" Grid.Row="0" Grid.Column="3" TextColor="Gray" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding dir}" Grid.Row="0" Grid.Column="4" TextColor="Gray" HorizontalOptions="Center"/>
+                            </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </syncfusion:SfListView.ItemTemplate>
+                <syncfusion:SfListView.LeftSwipeTemplate>
+                    <DataTemplate x:Name="LeftSwipeTemplate">
+                        <Grid BackgroundColor="CadetBlue" HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                <Image 
+                                   HeightRequest="25"
+                                   WidthRequest="25"
+                                   BindingContextChanged="Image_BindingContextChanged_1"
+                                   Source="Update.png" />
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </syncfusion:SfListView.LeftSwipeTemplate>
+                <syncfusion:SfListView.RightSwipeTemplate>
+                    <DataTemplate x:Name="RightSwipeTemplate">
+                        <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                <Image 
+                                   HeightRequest="50"
+                                   WidthRequest="50"
+                                   BindingContextChanged="Image_BindingContextChanged"
+                                   Source="Delete.png" />
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </syncfusion:SfListView.RightSwipeTemplate>
+            </syncfusion:SfListView>
+                <Button x:Name="btnactualiza" Text="ACTUALIZAR" Clicked="btnactualiza_Clicked" IsVisible="false"></Button>
+                <Button x:Name="btnborra" Text="ELIMINAR" Clicked="btnborra_Clicked" IsVisible="false"></Button>
+            </StackLayout>
+     </ContentPage.Content>
+</ContentPage>

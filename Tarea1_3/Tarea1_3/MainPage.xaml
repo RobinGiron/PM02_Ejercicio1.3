@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea1_3.MainPage">
+
+    <ScrollView>
+        <StackLayout>
+        <Frame BackgroundColor="Chocolate" Padding="24" CornerRadius="0">
+            <Label Text="Ingreso de Personas -SQLite-" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" FontAttributes="Bold" />
+        </Frame>
+        <Entry x:Name="txtid" IsVisible="false"/>
+        <Label Text="NOMBRES"  Margin="10"/>
+        <Entry x:Name="txtname" Placeholder="Ingrese Su Nombre"  Margin="10"/>
+
+        <Label Text="APELLIDOS"  Margin="10"/>
+        <Entry x:Name="txtsname" Placeholder="Ingrese Su Apellido"  Margin="10"/>
+
+        <Label Text="EDAD" Margin="10"/>
+        <Entry x:Name="txtedad" Placeholder="Ingrese Su Edad" Keyboard="Numeric" Margin="10"/>
+
+        <Label Text="DIRECCION" Margin="10"/>
+        <Entry x:Name="txtdir" Placeholder="Ingrese Su Direccion" Margin="10"/>
+
+        <Label Text="CORREO" Margin="10"/>
+        <Entry x:Name="txtemail" Placeholder="Ingrese Su Correo" Keyboard="Email" Margin="10"/>
+        <Button HorizontalOptions="Center" VerticalOptions="Center" Text="SALVAR" x:Name="btnsalva" Clicked="btnsalva_Clicked"
+                BorderWidth="1" 
+                BorderColor="Orange" 
+                BackgroundColor="Orange" 
+                BorderRadius="8"
+                TextColor="White"></Button>
+        <Button x:Name="btnLista" HorizontalOptions="Center" VerticalOptions="Center" Text="VER LISTA PERSONAS" Clicked="btnLista_Clicked"
+                BorderWidth="1" 
+                BorderColor="Green" 
+                BackgroundColor="Green" 
+                BorderRadius="8"
+                TextColor="White"></Button>
+    </StackLayout>
+    </ScrollView>
+
+</ContentPage>
